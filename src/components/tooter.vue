@@ -9,6 +9,7 @@
         <van-swipe-item><img class="img1" src="static/lbt1.png" alt=""></van-swipe-item>
         </van-swipe>
       </div>
+      
 
     <!-- nav导航栏 -->
     <div class="nav">
