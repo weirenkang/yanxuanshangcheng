@@ -7,7 +7,8 @@ import router from './router'
 Vue.config.productionTip = false
 import Vant from 'vant';
 import 'vant/lib/index.css';
-
+import axios from "axios"
+Vue.prototype.$axios=axios
 Vue.use(Vant);
 /* eslint-disable no-new */
 new Vue({
