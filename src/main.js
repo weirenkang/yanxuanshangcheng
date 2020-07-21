@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+ import store from './store/bus'
 
 Vue.config.productionTip = false
 import Vant from 'vant';
@@ -14,6 +15,7 @@ Vue.use(Vant);
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

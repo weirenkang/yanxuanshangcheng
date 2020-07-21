@@ -24,7 +24,8 @@ export default {
   data() {
     return {
       sjh: "",
-      pwd: ""
+      pwd: "",
+      p1:""
     };
   },
   methods: {
@@ -41,18 +42,38 @@ export default {
         .then(res => {
           console.log(res);
           if (res.data.msg == "success") {
-            localStorage.setItem("token",res.data.data.token);
-            this.$router.push("/gr");
+           
+           localStorage.setItem("token",res.data.data.token);
+           if(this.p1 !=""){
+             this.$router.push(this.p1)
+           }else{
+             this.$router.push("/gr");
+           }
+            
           } else {
             alert("亲 你的用户名或者密码不对");
           }
         });
     }
-  }
+  },
+  created(){
+    console.log(this.$route)
+  },
+  mounted(){
+   
+  },
+   beforeRouterEnter (to,from ,next){
+      console.log(from)
+      next(vm=>{
+        // 通过vm访问组件实例
+        vm.p1=from.path
+      })
+    }
 };
 </script>
 
-<style scoped>
+<style>
+
 .p_2 {
   width: 245px;
   height: 40px;

@@ -92,14 +92,14 @@ name:"gr"
      display: flex;
     position: fixed;
     left: -2px;
-    top: 487px;
+    top: 598px;
     background: white;
 }
 .banan li{
     width: 25%;
-    height: 50px;
+    height: 36px;
     text-align: center;
-   line-height: 50px;
+   line-height: 36px;
    justify-content: space-between;
 }
 </style>

@@ -12,13 +12,19 @@
           </ul>
       </div>
          <!-- 右边内容 -->
+         
       <div class="right1">
+    
           <ul>
-              <li v-for="(item,key) in sysp" :key="key">
+             
+              <li v-for="(item,key) in sysp" :key="key" @click="gocate(item.id)">
+                  
                   <img :src="item.icon" alt="">
                   <p class="p1">{{item.name}}</p>
-              </li>
+            </li>  
+            
           </ul>
+         
       </div>
       </section>
       <!-- 底部路由 -->
@@ -77,6 +83,11 @@ methods:{
          return res.level==1
      })
     },
+    // getData(){
+    //     this.$axios.get("https://api.it120.cc/small4/shop/goods/category/all").then((res)=>{
+    //         console.log(res.data.data)
+    //     })
+    // },
     qh(key,id){
         this.newkey=key
         this.sysp=this.newsysp
@@ -90,10 +101,14 @@ methods:{
             this.sysp=b
         }
         console.log(b)
+    },
+    gocate(id){
+        this.$router.push("/flsp?id="+id)
     }
 },
-created(){
-    this.getData();
+
+mounted(){
+    this.getData()
 }
 }
 </script>
@@ -123,7 +138,7 @@ created(){
     position: fixed;
     left: 30%;
     text-align: center;
-    height: 60%;
+    height: 100%;
     top: 51px;
     overflow: auto;
    /* background: palegreen; */
@@ -156,7 +171,7 @@ font-size: 12px;
 }
 .input13{
     width: 100%;
-    height: 50px;
+    height: 62px;
     border-bottom: 1px solid #F3F3F3;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -182,8 +197,8 @@ font-size: 12px;
     display: -ms-flexbox;
     display: flex;
     position: fixed;
-    left: -2px;
-    top: 493px;
+    left: 6px;
+    top: 611px;
     background: white;
 }
 .banan li{

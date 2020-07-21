@@ -111,9 +111,9 @@
          
               <p class="p14">人气推荐    》</p>
 
-              <div class="ren">
+              <div class="ren" >
                 <ul class="ul20">
-                    <li v-for="(item,key) in list" :key="key" >
+                    <li v-for="(item,key) in list" :key="key" @click="gog(item.id)">
                         <img :src="item.pic" alt="">
                         <p class="p20">{{item.name}}</p>
                         <p class="p21">{{item.characteristic}}</p>
@@ -169,9 +169,17 @@ export default {
         }
     },
     methods:{
+    // 跳转购物车
+    // add(id){
+    //     this.$router.push({name:"Detail",params:{id:id}})
+    // },
     go(id){
       this.$router.push("/News?id="+id)
-    }
+    },
+    gog(id){
+
+        this.$router.push({name:"Detail",params:{id:id}})
+        }
     },
     created(){
         axios.get("https://api.it120.cc/small4/shop/goods/list").then((res)=>{
@@ -209,7 +217,7 @@ export default {
     margin-top:5px;
 }
 .p21{
-    margin-top:7px;
+    margin-top:-1px;
     color:#999;
 }
 .p22{
@@ -355,14 +363,14 @@ height: 250px;
   }
 .banan{
   width: 100%;
-    height: 58px;
+    height: 77px;
     list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: fixed;
     left: -2px;
-    top: 528px;
+    top: 610px;
     background: white;
 }
 .banan li{

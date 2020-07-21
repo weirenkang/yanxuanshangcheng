@@ -8,6 +8,8 @@ import fl from '@/components/fl'
 import News from '@/components/News'
 import zhuci from '@/components/zhuci'
 import dl from '@/components/dl'
+import flsp from '@/components/flsp'
+import Detail from '@/components/detail'
 
 Vue.use(Router)
 
@@ -50,9 +52,19 @@ export default new Router({
     },
     {
       path:"/dl",
-      name:"zhuci",
+      name:dl,
       component:dl,
-    }
+    },
+    {
+      path:"/flsp",
+      name:flsp,
+      component:flsp,
+    },
+    {
+      path:"/detail/:id",
+      name:"Detail",
+      component:Detail,
+    },
   ]
   
 })
